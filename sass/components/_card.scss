@@ -1,0 +1,136 @@
+.card{
+     //FUNCTION
+     perspective: 150rem;
+     -moz-perspective: 150rem;
+     color: gray;
+     position: relative; 
+     height: 40rem;
+     //width: 30rem;
+
+
+     &_side{
+     background-color: $color-secondary;
+     height: 45rem ;
+     width: 35rem;
+
+     // width: 20rem;
+     transition: all .8s;
+     position: absolute;
+     top: 0;
+     left: 0;
+     backface-visibility:  hidden;
+     border-radius: 3rem;
+     overflow: hidden;
+     box-shadow: 0 1.5rem 4rem rgba(black, .15rem);
+
+          &-front{
+               background-color:$color-whitest;
+          }
+          &-back{
+               transform: rotateY(180deg);
+               &-1{
+                    background-image: linear-gradient(to left top, blue, cyan);
+               }
+               &-2{
+                    background-image: linear-gradient(to left top, green, darkgreen);
+               }
+               &-3{
+                    background-image: linear-gradient(to left top, yellow, orange);
+               }
+          }
+     }
+ 
+     &:hover &_side-front{
+          transform: rotateY(-180deg);
+     }
+     &:hover &_side-back{
+          transform: rotateY(0deg);
+     }
+
+     //Front Side
+     &-picture{
+          background-size: cover;
+          height: 23rem;
+          background-blend-mode: screen;
+          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+          &-1{
+               background-image: linear-gradient(to left top, blue, cyan),
+               url(/img/nat-5.jpg);
+          }
+          &-2{
+               background-image: linear-gradient(to left top, green, darkgreen),
+               url(/img/nat-6.jpg);
+          }
+          &-3{
+               background-image: linear-gradient(to left top, yellow, orange),
+               url(/img/nat-7.jpg);
+          }
+     }
+
+     &-heading{
+          color: $color-whitest;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+          font-weight: 5 00;
+          position: absolute;
+          top: 15rem;
+          right: 2rem;
+          text-align: right;
+          width: 60%; 
+          // padding: 0rem 0rem 5rem 0rem;
+          // box-decoration-break: clone
+     }
+
+     &-heading-span{
+          &-1{
+               background-image: linear-gradient(to right bottom, blue, cyan); 
+          }    
+          &-2{
+               background-image: linear-gradient(to right bottom, green, darkgreen); 
+          }
+          &-3{
+               background-image: linear-gradient(to right bottom, yellow, orange); 
+          }
+     }
+
+     &-parag{
+          // padding: 3rem;
+          ul{
+               list-style: none;
+               // margin: 2rem;
+               width: 80%;
+               margin: 2rem auto;
+               li{
+                    text-align: center;
+                    font-size: 1.5rem;
+                    padding: 0.5rem;
+
+                    &:not(:last-child){
+                         border-bottom: 1px solid lightgrey;
+                    }
+               }
+          }
+     }
+     &-cta{
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+     }
+     &-price-box{
+
+          &-only{
+               color: white;
+               margin: 2rem;
+               font-size: 1.5rem;
+               font-size: 200;
+          }
+          &-value{
+               color:white;
+               margin: 2rem;
+               font-size: 4rem;
+               font-weight: 300;
+          }
+     }
+}
